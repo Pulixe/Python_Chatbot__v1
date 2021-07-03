@@ -3,5 +3,5 @@ services:
     bot_api_v1:
         build: .
         ports:
-        - 15443:8081
+        - 14443:8081
 
