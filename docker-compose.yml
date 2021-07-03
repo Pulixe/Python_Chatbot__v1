@@ -1,6 +1,7 @@
 version: '3'
 services:
-    web_api:
+    bot_api_v1:
         build: .
         ports:
-        - 15443:80
+        - 15443:8081
+

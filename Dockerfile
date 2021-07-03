@@ -7,13 +7,12 @@ LABEL maintainer="francisco.pulice@outlook.com"
 WORKDIR /opt/ia/api/v1/BOT
 
 RUN pip install --upgrade tensorflow
-RUN pip install -r req.txt
 
 COPY . /opt/ia/api/v1/BOT/
-
+RUN pip install -r req.txt
 ENV NLTK_DATA /nltk_data/
 ADD . $NLTK_DATA
 
-EXPOSE 80
+#EXPOSE 8080
 
 ENTRYPOINT python main.py
