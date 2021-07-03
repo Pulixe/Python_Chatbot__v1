@@ -7,7 +7,7 @@
   {
     "tag": "preguntasGenerales",
     "patterns": ["que metodo usar?", "que hago con los estudiantes?", "como mejorar la clase?"],
-    "responses": ["Dialogos cortos con los los estudiantes para saber como se sienten con respecto a la clase", "Utilizar dibujos de ser posible para hacer que los estudiantes comprendan mejor el tema", "Reflexion lingüística"]
+    "responses": ["Dialogos cortos con los los estudiantes para saber como se sienten con respecto a la clase", "Utilizar dibujos de ser posible para hacer que los estudiantes comprendan mejor el tema", "Acercarse a los estudiantes para conocerlos y comprender la forma en la que piensan y los gustos que tienen"]
   },
   {
     "tag": "preguntasEstudio",
