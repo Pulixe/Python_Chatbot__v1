@@ -1,0 +1,86 @@
+FORMAT: 1A
+
+### Ejercicio 1
+Auth Capture (Que es la plataforma de verificación) verifica si una tarjeta de crédito es válida y tiene los fondos para 
+completar una transacción específica
+
+
+##  Group Auth Capture
+
+## verify [/api/verify/card/{id}]
+
+### SendCreditCard [POST]
++ Parameters
+    +   id (string) 
+    id de la tarjeta a verificar
+
+Al enviar los datos de la tarjeta al servidor sera validada para su uso.
++ Request (application/vnd.api+json)
+
+    +   Headers
+    
+        Accept: application/vnd.api+json
+
+    +   Body
+        {
+            "cardTransactionType": "AUTH_CAPTURE",
+            "softDescriptor": "DescTest",
+            "amount": "11.00",
+            "currency": "USD",
+            "cardHolderInfo": {
+                "firstName": "test first name",
+                "lastName": "test last name",
+                "zip": "123456"
+            },
+            "creditCard": {
+                "cardNumber": "4263982640269299",
+                "securityCode": "837",
+                "expirationMonth": "02",
+                "expirationYear": "2023"
+            }
+        }
+        
+
++   Response    202  (application/vnd.api+json)
+
+    +   Headers
+    
+            Location: https://bancogeneral.com/session
+    
+    +   Body
+    
+        {
+        "cardTransactionType": "AUTH_CAPTURE",
+        "transactionId": "1035511869",
+        "softDescriptor": "BLS*DescTest",
+        "amount": 11,
+        "usdAmount": 11,
+        "currency": "USD",
+        "transactionApprovalDate": "09/29/2020",
+        "transactionApprovalTime": "13:08:47",
+        "cardHolderInfo": {
+            "firstName": "test first name",
+            "lastName": "test last name",
+            "zip": "123456"
+        },
+        "vaultedShopperId": 28855193,
+        "creditCard": {
+            "cardLastFourDigits": "9299",
+            "cardType": "VISA",
+            "cardSubType": "CREDIT",
+            "cardCategory": "PLATINUM",
+            "binCategory": "CONSUMER",
+            "cardRegulated": "N",
+            "issuingBank": "ALLIED IRISH BANKS PLC",
+            "issuingCountryCode": "ie"
+        },
+        "processingInfo": {
+            "processingStatus": "success",
+            "cvvResponseCode": "MA",
+            "authorizationCode": "123456",
+            "avsResponseCodeZip": "U",
+            "avsResponseCodeAddress": "U",
+            "avsResponseCodeName": "U"
+        },
+        "fraudResultInfo": {}
+        }
